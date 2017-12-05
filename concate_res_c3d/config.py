@@ -3,8 +3,9 @@ from jobman import DD
 # the dir where there should be a subdir named 'youtube2text_iccv15'
 RAB_DATASET_BASE_PATH = '/mnt/data/guozhao/predatas/MSVD/'
 RAB_FEATURE_BASE_PATH = '/mnt/data/guozhao/features/MSVD/ResNet_152/'
+RAB_FEATURE_BASE_PATH_C = '/mnt/data/guozhao/features/MSVD/C3D/'
 # the dir where all the experiment data is dumped.
-RAB_EXP_PATH = '/home/lixiangpeng/workspace/videoCaption/result/MSVD/resnet/'
+RAB_EXP_PATH = '/home/lixiangpeng/workspace/videoCaption/result/MSVD/concate_res_c3d/'
 
 config = DD({
     'model': 'attention',

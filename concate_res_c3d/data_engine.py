@@ -36,8 +36,11 @@ class Movie2Caption(object):
         
     def _filter_googlenet(self, vidID):
         feat = numpy.load(os.path.join(self.FEAT_ROOT, vidID + '.npy'))
+        feat_c = numpy.load(os.path.join(self.FEAT_ROOT_C, vidID + '.npy'))
         #feat = self.FEAT[vidID]
         feat = self.get_sub_frames(feat)
+        feat_c = self.get_sub_frames(feat_c)
+        feat = numpy.concatenate((feat,feat_c),axis=1)
         return feat
     
     def get_video_features(self, vidID):
@@ -138,11 +141,13 @@ class Movie2Caption(object):
         print 'loading youtube2text %s features'%self.video_feature
         dataset_path = config.RAB_DATASET_BASE_PATH
         feature_path = config.RAB_FEATURE_BASE_PATH
+        feature_path_c = config.RAB_FEATURE_BASE_PATH_C
         self.train = utils.load_pkl(dataset_path + 'train.pkl')
         self.valid = utils.load_pkl(dataset_path + 'valid.pkl')
         self.test = utils.load_pkl(dataset_path + 'test.pkl')
         self.CAP = utils.load_pkl(dataset_path + 'CAP.pkl')
         self.FEAT_ROOT = feature_path
+        self.FEAT_ROOT_C = feature_path_c
         if self.signature == 'youtube2text':
             self.train_ids = ['vid%s' % i for i in range(1, 1201)]
             self.valid_ids = ['vid%s' % i for i in range(1201, 1301)]
@@ -167,7 +172,7 @@ class Movie2Caption(object):
         self.n_words = len(self.word_idict)
         
         if self.video_feature == 'googlenet':
-            self.ctx_dim = 2048
+            self.ctx_dim = 6144
         else:
             raise NotImplementedError()
         self.kf_train = utils.generate_minibatch_idx(
