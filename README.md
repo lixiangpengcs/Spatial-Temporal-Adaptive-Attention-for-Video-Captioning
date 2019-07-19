@@ -1,6 +1,6 @@
 # Spatial-Temporal-Adaptive-Attention-for-Video-Captioning
 
-This is an implementation for "Spatial-Temporal-Adaptive-Attention-for-Video-Captioning" and it is extension of the paper "Hierarchical LSTM with Adjusted Temporal Attention for Video Captioning" accepted in International Joint Conference on Artificial Intelligence (IJCAI) 2017 https://github.com/zhaoluffy/hLSTMat
+This is an implementation for "Hierarchical LSTMs with Adaptive Attention for Visual Captioning" and it is extension of the paper "Hierarchical LSTM with Adjusted Temporal Attention for Video Captioning" accepted in International Joint Conference on Artificial Intelligence (IJCAI) 2017 https://github.com/zhaoluffy/hLSTMat. This work has been accepted by IEEE Transactions of Pattern Analysis and Machine Intelligence (TPAMI), 2019.
 
 Three corresponding version are: concatenation fusion, dynamic fusion and ensemble fusion.
 
