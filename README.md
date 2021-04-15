@@ -19,3 +19,16 @@ Three corresponding version are: concatenation fusion, dynamic fusion and ensemb
 
 ## Others
  If you have any question, drop us email at:xiangpengli.cs@gmail.com
+
+```
+@article{gao2019hierarchical,
+  title={Hierarchical LSTMs with adaptive attention for visual captioning},
+  author={Gao, Lianli and Li, Xiangpeng and Song, Jingkuan and Shen, Heng Tao},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={42},
+  number={5},
+  pages={1112--1131},
+  year={2019},
+  publisher={IEEE}
+}
+```
